@@ -1,4 +1,4 @@
-wfrom setuptools import setup, find_packages
+from setuptools import setup, find_packages
 
 setuptools.setup(
     name='sections-space',
