@@ -1,7 +1,7 @@
 #linear algebra
-from aux_fun import intersection,proj,null_space,flatten_zero
+from sections_space.aux_fun import intersection,proj,null_space,flatten_zero
 #quiver and matrix in fields
-from aux_fun import E_in_out,Quiver,shift_vertices,zeros_mat,eye_mat,Field
+from sections_space.aux_fun import E_in_out,Quiver,shift_vertices,zeros_mat,eye_mat,Field
 import numpy as np
 
 ## Reordering vertices so that edges are increasing
