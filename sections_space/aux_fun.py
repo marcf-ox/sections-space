@@ -6,11 +6,8 @@ Created on Thu Aug 12 19:50:59 2021
 """
 import numpy as np
 import scipy.linalg
-from time import time,sleep
 import matplotlib.pyplot as plt
-import sympy as sy 
-import traceback as tr
-import sys,copy
+import copy
 from cfractions import Fraction
 Q_pb=[]
 
