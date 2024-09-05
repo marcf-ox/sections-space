@@ -7,9 +7,9 @@ Created on Wed Jul 28 18:36:40 2021
 
 import numpy as np
 #linear algebra
-from aux_fun import intersection,null_space
+from sections_space.aux_fun import intersection,null_space
 #Quiver and matrices in fields
-from aux_fun import  E_in_out,Quiver,eye_mat,Field
+from sections_space.aux_fun import  E_in_out,Quiver,eye_mat,Field
 import networkx as nx
 
 
