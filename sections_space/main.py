@@ -2,15 +2,15 @@
 #linear algebra
 import numpy as np
 import scipy.linalg
-from aux_fun import proj, inj, intersection,null_space,sum_subspaces,extract_basis
+from sections_space.aux_fun import proj, inj, intersection,null_space,sum_subspaces,extract_basis
 #quiver and matrix in fields
-from aux_fun import Field,zeros_mat,eye_mat,Quiver
+from sections_space.aux_fun import Field,zeros_mat,eye_mat,Quiver
 #display
-from aux_fun import print_limit,test_plot, test_plot_by_m
+from sections_space.aux_fun import print_limit,test_plot, test_plot_by_m
 #steps of advanced algo
-from strongly_connected import generate_SG_graphs,SG_to_tree
-from arboreal import arboreal_out,generate_acyclic
-from acycli_red import acyclic_red
+from sections_space.strongly_connected import generate_SG_graphs,SG_to_tree
+from sections_space.arboreal import arboreal_out,generate_acyclic
+from sections_space.acycli_red import acyclic_red
 #graph
 import networkx as nx
 
