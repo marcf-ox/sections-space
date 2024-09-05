@@ -1,9 +1,8 @@
 from setuptools import setup, find_packages
-from sections-space import __version__
 
 setuptools.setup(
     name='sections-space',
-    version=__version__,
+    version="0.0.0",
     author='Marcf',
     license='MIT',
     install_requires=['numpy>=1.24.2','scipy>=1.10.0','cfractions>=2.2.0'],
