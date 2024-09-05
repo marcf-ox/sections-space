@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from sections_space import __version__
+from sections-space import __version__
 
 setuptools.setup(
     name='sections-space',
