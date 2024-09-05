@@ -55,11 +55,11 @@ class Field:
         if len(args)==1:
             self.descr=args[0]
             if args[0]=='C':
-                zero=0.+0j
-                one=1.+0j
+                self.zero=0.+0j
+                self.one=1.+0j
             elif args[0]=='R':
-                zero=0.
-                one=1.
+                self.zero=0.
+                self.one=1.
             elif args[0]=='F_2':
                 self.descr=args[0]
                 self.zero=F_2(0)
