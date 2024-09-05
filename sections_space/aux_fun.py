@@ -48,13 +48,18 @@ class F_2():
 #general field definition
 class Field:
     descr='O'
-    zero=0.
-    one=1.
+    zero=None
+    one=None
     def __init__(self,*args):
         # usual fields R, C, F_2, Q
         if len(args)==1:
-            if args[0] in ['R','C']:
-                self.descr=args[0]
+            self.descr=args[0]
+            if args[0]=='C':
+                zero=0.+0j
+                one=1.+0j
+            elif args[0]=='R':
+                zero=0.
+                one=1.
             elif args[0]=='F_2':
                 self.descr=args[0]
                 self.zero=F_2(0)
