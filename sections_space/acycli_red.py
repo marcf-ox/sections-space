@@ -1,8 +1,8 @@
 #linear algebra
-from aux_fun import intersection,row_echelon,col_echelon,solve_triangular,null_space
+from sections_space.aux_fun import intersection,row_echelon,col_echelon,solve_triangular,null_space
 #Quiver and matrices in fields
-from aux_fun import Quiver,E_in_out,zeros_mat,eye_mat,is_all_zero_mat
-from strongly_connected import SG_to_tree
+from sections_space.aux_fun import Quiver,E_in_out,zeros_mat,eye_mat,is_all_zero_mat
+from sections_space.strongly_connected import SG_to_tree
 import numpy as np
 import networkx as nx
 import copy
