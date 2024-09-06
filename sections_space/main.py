@@ -134,9 +134,9 @@ def nx_graph_to_quiver(G,field):
     n=len(list(G.nodes()))
     E,AE=[],[]
     spaces= np.zeros(n)
-    for e in list(G.edges()):
-        E.append(list(e))
-        AE.append(G.edges[e]["map"])
+    for e in G.edges.data():
+        E.append(list(e[:2]))
+        AE.append(e[2]["map"])
         spaces[e[0]]= AE[-1].shape[1]
         spaces[e[1]]= AE[-1].shape[0]
     #dimension of singletons
