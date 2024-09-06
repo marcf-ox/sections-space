@@ -144,17 +144,3 @@ def nx_graph_to_quiver(G,field):
         if dim_i!=None:
             spaces[i]= dim_i
     return Quiver(n, E,list(spaces),AE,field)
-        
-
-
-
-
-field0= Field("Q")
-edges = [("v"+str(i),"v"+str((i+1)%4), {"map": np.array([Fraction(1,i%2+1)]).reshape((1,1))}) for i in range(4)]
-  
-G= nx.from_edgelist(edges)
-G.add_node("v5", dim=2)
-nx.draw(G,arrows=True,with_labels=True)
-Q=nx_graph_to_quiver(G,field0)
-
-compute_sections(Q)
