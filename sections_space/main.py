@@ -134,7 +134,7 @@ def nx_graph_to_quiver(G,field):
     n=len(list(G.nodes()))
     E,AE=[],[]
     spaces= np.zeros(n)
-    for e in G.edges.keys():
+    for e in list(G.edges()):
         E.append(list(e))
         AE.append(G.edges[e]["map"])
         spaces[e[0]]= AE[-1].shape[1]
