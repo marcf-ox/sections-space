@@ -10,7 +10,7 @@ from aux_fun import print_limit,test_plot, test_plot_by_m
 from strongly_connected import generate_SG_graphs,SG_to_tree
 from arboreal import arboreal_out,generate_acyclic
 from acycli_red import acyclic_red
-from main import compute_sections,sections_naive,generate_random_quiver
+from main import compute_sections,sections_naive
 #graph
 import networkx as nx
 
@@ -108,5 +108,36 @@ def test_C():
     print(compute_sections(Q)[0])
     print("naive")
     print("=",sections_naive(Q))
+
+
+   
+def generate_random_quiver(range_test,n_test,by_m,field):
+    k=5
+    Q_test_all=[]
+    #generate examples
+    for n_or_m in range_test:
+        n=n_or_m
+        m=int(2*n**1.2)        
+        if by_m:
+            m=n_or_m
+            n=25
+        Q_test=[]
+        for _ in range(n_test):
+            #erdos-renyi
+            E=[]
+            G=nx.gnp_random_graph(n, m/float(n*(n-1)), seed=None, directed=True)
+            E=[[e[0],e[1]] for e in G.edges]
+            eta=1./(2*k*(1+len(E)))
+            if field.descr in ['R','C']:
+                AE=[np.eye(k,dtype=float)+np.floor((1+eta)*np.random.random((k,k)))for _ in E]        
+            else:
+                AE=[eye_mat(k,field) for _ in E]
+                for i_E in range(len(E)):
+                    if np.random.random()<eta*k*k:
+                        AE[i_E][np.random.randint(k)][np.random.randint(k)]=field.one
+            np.random.shuffle(E)
+            Q_test.append(Quiver(n,E,list(k*np.ones(n,dtype=int)),AE,field))
+        Q_test_all.append(Q_test)
+    return Q_test_all
     
 test_general()
