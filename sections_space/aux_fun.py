@@ -9,6 +9,7 @@ import scipy.linalg
 import matplotlib.pyplot as plt
 import copy
 from cfractions import Fraction
+from time import time
 Q_pb=[]
 
 
