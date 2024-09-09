@@ -14,7 +14,7 @@ This requires Python >=3.8.0, Numpy>=1.23, Scipy>=1.10.0, cfractions>=2.2.0, Net
 
 ## Exampple
 
-'''
+```
 field= Field("R")
 #create a cyclic graph
 edges = [("v"+str(i),"v"+str((i+1)%4), {"map": np.array([2**(2*(i%2)-1)]).reshape((1,1))}) for i in range(4)]
@@ -23,4 +23,5 @@ G= nx.from_edgelist(edges,create_using=nx.DiGraph())
 Q=nx_graph_to_quiver(G,field)
 #compute the dimension d of the   space  of sections and dim d and the projections of a base onto each component
 d,projs=compute_sections(Q)
-'''
+```
+
