@@ -12,7 +12,7 @@ pip install git+https://github.com/marcf-ox/sections-space
 
 This requires Python >=3.8.0, Numpy>=1.23, Scipy>=1.10.0, cfractions>=2.2.0, Networkx>=2.6.2, Matplotlib>=3.3.4, Markdown>=3.4.1
 
-## Exampple
+## Example
 
 ```
 from sections_space import Field, nx_graph_to_quiver,compute_sections
@@ -23,7 +23,7 @@ import networkx as nx
 field= Field("R")
 
 #create a cyclic graph
-edges = [("v"+str(i),"v"+str((i+1)%4), {"map": np.array([2**(2*(i%2)-1)]).reshape((1,1))}) for i in range(4)]
+edges = [(i,(i+1)%4, {"map": np.ones((1,1))}) for i in range(4)]
 G= nx.from_edgelist(edges,create_using=nx.DiGraph())
 
 #convert to Quiver
