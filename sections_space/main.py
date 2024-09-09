@@ -94,7 +94,34 @@ def compute_sections(Q,CC_separated=True):
         maps_final.append(np.concatenate(blocks,axis=1))
     return lim_final,maps_final
 
-
+def generate_random_quiver(range_test,n_test,by_m,field):
+    k=5
+    Q_test_all=[]
+    #generate examples
+    for n_or_m in range_test:
+        n=n_or_m
+        m=int(2*n**1.2)        
+        if by_m:
+            m=n_or_m
+            n=25
+        Q_test=[]
+        for _ in range(n_test):
+            #erdos-renyi
+            E=[]
+            G=nx.gnp_random_graph(n, m/float(n*(n-1)), seed=None, directed=True)
+            E=[[e[0],e[1]] for e in G.edges]
+            eta=1./(2*k*(1+len(E)))
+            if field.descr in ['R','C']:
+                AE=[np.eye(k,dtype=float)+np.floor((1+eta)*np.random.random((k,k)))for _ in E]        
+            else:
+                AE=[eye_mat(k,field) for _ in E]
+                for i_E in range(len(E)):
+                    if np.random.random()<eta*k*k:
+                        AE[i_E][np.random.randint(k)][np.random.randint(k)]=field.one
+            np.random.shuffle(E)
+            Q_test.append(Quiver(n,E,list(k*np.ones(n,dtype=int)),AE,field))
+        Q_test_all.append(Q_test)
+    return Q_test_all
 
 from cfractions import Fraction
 #create quiver from networkx graph 
