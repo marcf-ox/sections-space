@@ -15,8 +15,10 @@ This requires Python >=3.8.0, Numpy>=1.23, Scipy>=1.10.0, cfractions>=2.2.0, Net
 ## Exampple
 
 ```
+#choose base field
 field= Field("R")
 #create a cyclic graph
+import networkx as nx
 edges = [("v"+str(i),"v"+str((i+1)%4), {"map": np.array([2**(2*(i%2)-1)]).reshape((1,1))}) for i in range(4)]
 G= nx.from_edgelist(edges,create_using=nx.DiGraph())
 #convert to Quiver
