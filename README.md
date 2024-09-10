@@ -10,7 +10,7 @@ It may be installed via
 pip install git+https://github.com/marcf-ox/sections-space
 ```
 
-This requires Python >=3.8.0, Numpy>=1.23, Scipy>=1.10.0, cfractions>=2.2.0, Networkx>=2.6.2, Matplotlib>=3.3.4, Markdown>=3.4.1
+This requires Python >=3.8.0, Numpy>=1.23, Scipy>=1.10.0, cfractions>=2.2.0, Networkx>=2.6.2, Matplotlib>=3.3.4.
 
 ## Example
 
