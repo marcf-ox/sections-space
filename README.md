@@ -32,7 +32,7 @@ field= Field("R")
 edges = [(i,(i+1)%4, {"map": np.ones((1,1))}) for i in range(4)]
 G= nx.from_edgelist(edges,create_using=nx.DiGraph())
 
-#convert to Quiver represention
+#convert to Quiver representation
 A=nx_graph_to_quiver(G,field)
 
 #compute the dimension d of the   space  of sections and the projections of a base onto each component
