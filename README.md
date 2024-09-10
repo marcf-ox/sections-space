@@ -28,14 +28,15 @@ import networkx as nx
 #choose base field
 field= Field("R")
 
-#create a cyclic graph
+#create a cyclic Networkx graph with I_1 maps attached to each edge
 edges = [(i,(i+1)%4, {"map": np.ones((1,1))}) for i in range(4)]
 G= nx.from_edgelist(edges,create_using=nx.DiGraph())
 
-#convert to Quiver
-Q=nx_graph_to_quiver(G,field)
+#convert to Quiver represention
+A=nx_graph_to_quiver(G,field)
 
 #compute the dimension d of the   space  of sections and the projections of a base onto each component
-d,projs=compute_sections(Q)
+d,projs=compute_sections(A)
+print(d)
 ```
 
